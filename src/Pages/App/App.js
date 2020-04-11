@@ -7,10 +7,13 @@ import userService from '../../Utilities/userService';
 // import tokenService from '../../Utilities/tokenService';
 
 class App extends Component {
-
-    state = {
-      books: []
+  constructor() {
+    super();
+    this.state = {
+      books: [],
+      user: userService.getUser()
     };
+  }
 
     // login functions 
 
@@ -20,7 +23,7 @@ class App extends Component {
     handleLogout = () => {
       userService.logout();
       this.setState({ user: null });
-    }
+    };
   
 
     /* Lifecycle Methods */
