@@ -4,12 +4,10 @@ import './index.css';
 import App from './Pages/App/App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
-import SignupPage from './Pages/SignupPage/SignUpPage';
 
 ReactDOM.render(
   <Router>
     <App />
-    <SignupPage />
   </Router>,
   document.getElementById('root')
 );

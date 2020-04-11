@@ -4,7 +4,6 @@ import {Switch, Route, NavLink} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignUpPage'
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../Utilities/userService';
-// import tokenService from '../../Utilities/tokenService';
 
 class App extends Component {
   constructor() {
