@@ -1,24 +1,18 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 6;
 
 
-const userSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-    },
+const userSchema = new mongoose.Schema({
+    name: String,
     email: {
         type: String,
         required: true,
         unique: true,
         lowercase: true,
     },
-    password: {String,
-    },
-    books: [{type: mongoose.Schema.Types.ObjectId, ref: "Book"}]
+    password: String    
 }, {
     timestamps: true
 });
@@ -52,4 +46,4 @@ userSchema.pre('save', function(next) {
     });
   };
 
-module.exports = mongoose.Model('User',userSchema);
+module.exports = mongoose.model('User',userSchema);
