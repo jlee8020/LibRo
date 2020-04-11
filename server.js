@@ -11,6 +11,7 @@ const cors = require('cors');
 require('dotenv').config();
 require('./config/database');
 
+
 const booksRouter = require('./routes/api/books');
 const usersRouter = require('./routes/api/users');
 
@@ -23,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use('/api/books', booksRouter);
 app.use('/api/users', usersRouter);
+// app.use(require('./config/auth'));
+
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work 
