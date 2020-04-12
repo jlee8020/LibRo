@@ -3,6 +3,13 @@ const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 6;
 
+const bookSchema = new mongoose.Schema({
+  title: String,
+  author: String
+}, {
+  timestamps: true
+})
+
 
 const userSchema = new mongoose.Schema({
     name: String,
@@ -12,7 +19,10 @@ const userSchema = new mongoose.Schema({
         unique: true,
         lowercase: true,
     },
-    password: String    
+    password: String,
+
+    books: [bookSchema]
+   
 }, {
     timestamps: true
 });
