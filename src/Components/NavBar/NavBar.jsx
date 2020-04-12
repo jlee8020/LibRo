@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import './NavBar.css';
 
 const NavBar = (props) => {
   let nav = props.user ?
     <div>
-      {/* <Link to='/high-scores' className='NavBar-link'>HIGH SCORES</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; */}
+      <Link to='/' className='NavBar-link'>Home</Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <Link to="/find-books-page" className='btn btn-primary'>Find Books</Link>
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
       <Link to='' className='NavBar-link' onClick={props.handleLogout}>LOG OUT</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
@@ -22,7 +23,7 @@ const NavBar = (props) => {
 
 
   return (
-    <div className='NavBar'>
+    <div>
       {nav}
     </div>
   );

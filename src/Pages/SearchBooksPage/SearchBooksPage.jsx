@@ -1,14 +1,15 @@
 import React from 'react'
+import SearchBooksForm from '../../Components/SearchBooksForm/SearchBooksForm';
         
 
 
 const SearchBooksPage = (props) => {
     return (
-        <main>
+        <div>
             <h1>Search Books Page</h1>
-        </main>
+            <SearchBooksForm {...props }/> 
+        </div>
     );
 }
-
 
 export default SearchBooksPage;
