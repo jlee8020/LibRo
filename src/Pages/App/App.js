@@ -1,21 +1,24 @@
 import React, {Component} from 'react';
 // import './App.css';
-import {Switch, Route, NavLink} from 'react-router-dom';
+import {Switch, Route, NavLink, Link} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignUpPage'
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../Utilities/userService';
 import BooklistPage from '../BookListPage/BookList'
 import SearchBooksPage from '../SearchBooksPage/SearchBooksPage';
 
+import BookPage from '../BookPage/BookPage'
+import {getAllBook} from '../../Services/books-api';
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      books: [],
+      book: [],
       user: userService.getUser()
     };
   }
-
+ 
     // login functions 
 
     handleSignupOrLogin = () => {
@@ -26,13 +29,19 @@ class App extends Component {
       this.setState({ user: null });
     };
   
-
-
-    /* Lifecycle Methods */
-  
-    componentDidMount() {
-      console.log('App: componentDidMount');
+    getBook = (idx) => {
+      return this.state.book[idx];
     }
+ 
+    /* Lifecycle Methods */
+    async componentDidMount() {
+      const book = await getAllBook();
+      console.log(book.results);
+      this.setState({ book: book.results })
+    }
+    // componentDidMount() {
+    //   console.log('App: componentDidMount');
+    // }
   
     componentDidUpdate() {
       console.log('App: componentDidUpdate');
@@ -59,6 +68,23 @@ class App extends Component {
           </nav>
       </header>
         <Switch>
+          <Route exact path="/bookpage" render={() => 
+            <section>
+            {this.state.book.map((book, idx) =>
+             <Link
+              key={book.title}
+              to={`/book/${idx}`}
+              >
+              {book.title}
+              </Link>
+              )}
+            </section>
+            } />
+            <Route path='/book/:idx' render={(props) => 
+              <BookPage 
+                {...props}
+              />
+            }></Route>
            <Route exact path="/searchbooks" render={() => 
             <SearchBooksPage />
             }
