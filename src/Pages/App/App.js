@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 // import './App.css';
-import {Switch, Route, NavLink, Link} from 'react-router-dom';
+import {Switch, Route, NavLink} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignUpPage'
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../Utilities/userService';
 import BooklistPage from '../BookListPage/BookList'
 import SearchBooksPage from '../SearchBooksPage/SearchBooksPage';
-import BookPage from '../BookPage/BookPage'
 
 class App extends Component {
   constructor() {
@@ -60,10 +59,6 @@ class App extends Component {
           </nav>
       </header>
         <Switch>
-        <Route exact path="/bookpage" render={() => 
-            <BookPage />
-            }
-          />
            <Route exact path="/searchbooks" render={() => 
             <SearchBooksPage />
             }
