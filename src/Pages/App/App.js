@@ -42,14 +42,11 @@ class App extends Component {
     
   
     handleAddBook = async newBookData => {
-      console.log('h')
       const newBook = await bookAPI.create(newBookData);
-      console.log('i')
-
       this.setState(state => ({
-        books: [...state.books, newBook]
+        books: [{...state.books, newBook}]
       }), () => 
-      this.props.history.push('/allbooks'));
+      this.props.history.push('/'));
     }
 
     /* Lifecycle Methods */

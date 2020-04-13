@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 
 class AddBookPage extends Component {
     state = {
-        invalidForm: false,
+        invalidForm: true,
         formData:{
             title:'',
             type:'',
             genre:'',
             author:'',
-            user: this.props.user,
+            // user: this.props.user,
         },
         
     };
@@ -16,6 +16,7 @@ class AddBookPage extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
+        console.log(this.state.formData)
         this.props.handleAddBook(this.state.formData);
 
     };

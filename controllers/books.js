@@ -1,4 +1,4 @@
-const Book = require('../models/user');
+const Book = require('../models/book');
 const User = require('../models/user');
 
 
@@ -27,10 +27,10 @@ async function index(req, res) {
   }
 
 
-// async function create(req, res) {
-//     const book = await Book.create(req.body);
-//     res.status(201).json(book);
-// }
+async function create(req, res) {
+    const book = await Book.create(req.body);
+    res.status(201).json(book);
+}
 
 // function create(req, res){
 //     Book.create(req.body, function(err, book){
@@ -38,15 +38,15 @@ async function index(req, res) {
 //     });
 // }
 
-async function create(req, res) {
-    const create = await User.findById(req.body.user._id, function(err, user) {
-        console.log(req.body)
-        user.books.push(req.body);
-        user.save(function(err) {
-        res.status(201).json(create);
-        });
-    });
-}
+// async function create(req, res) {
+//     const create = await User.findById(req.body.user._id, function(err, user) {
+//         console.log(req.body)
+//         user.books.push(req.body);
+//         user.save(function(err) {
+//         res.status(201).json(create);
+//         });
+//     });
+// }
 // async function show(req, res) {
 //     const book = await Book.findById(req.params.id);
 //     res.status(200).json(book);
