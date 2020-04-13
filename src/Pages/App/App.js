@@ -6,7 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../Utilities/userService';
 // import SearchBooksPage from '../SearchBooksPage/SearchBooksPage';
 import * as bookAPI from '../../Services/books-api'
-import BookListPage from '../../Pages/BookListPage/BookList';
+import BookListPage from '../BookListPage/BookListPage';
 import AddBookPage from '../../Pages/AddBookPage/AddBookPage';
 
 
@@ -43,8 +43,9 @@ class App extends Component {
   
     handleAddBook = async newBookData => {
       const newBook = await bookAPI.create(newBookData);
+      console.log(this.state)
       this.setState(state => ({
-        books: [{...state.books, newBook}]
+        books: [...state.books, newBook]
       }), () => 
       this.props.history.push('/'));
     }
@@ -52,7 +53,8 @@ class App extends Component {
     /* Lifecycle Methods */
     async componentDidMount() {
       const books = await bookAPI.getAll();
-      this.setState({books});
+      console.log(books.books)
+      this.setState({books: books.books});
     }
     // componentDidMount() {
     //   console.log('App: componentDidMount');
