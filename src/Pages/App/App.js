@@ -39,7 +39,6 @@ class App extends Component {
       this.setState({ user: null });
     };
   
-    
   
     handleAddBook = async newBookData => {
       const newBook = await bookAPI.create(newBookData);
@@ -50,6 +49,13 @@ class App extends Component {
       this.props.history.push('/'));
     }
 
+    handleDeleteBook= async id => {
+      await bookAPI.deleteOne(id);
+      this.setState(state => ({
+        books: state.books.filter(b => b._id !== id)
+      }), () => this.props.history.push('/'));
+    }
+    
     /* Lifecycle Methods */
     async componentDidMount() {
       const books = await bookAPI.getAll();
@@ -63,24 +69,7 @@ class App extends Component {
     // componentDidUpdate() {
     //   console.log('App: componentDidUpdate');
     // }
-  
-    //books data
-    // handleGetBooks = () => {
-    //   userService.getBooks(this.state.user._id).then(data => {
-    //     this.setState({ books: data });
-    //   });
-    // }
 
-    // handleClickSearchBook = ({ title, author }) => {
-    //   userService.addBook(this.state.user._id, {
-    //     title: title,
-    //     author: author
-    //   }).then(data => {
-    //      this.setState({ books: data }, () => {
-    //        return this.props.history.push('/booklist-page')
-    //      })
-    //   })
-    // }
   
   
   render () {
