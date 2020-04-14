@@ -21,4 +21,10 @@ export function deleteOne(id) {
     }).then(res => res.json());
   }
 
-
+  export function update(book) {
+    return fetch(`${BASE_URL}/${book._id}`, {
+      method: 'PUT',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(book)
+    }).then(res => res.json());
+  }

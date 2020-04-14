@@ -4,26 +4,18 @@ import {Switch, Route} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignUpPage'
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../Utilities/userService';
-// import SearchBooksPage from '../SearchBooksPage/SearchBooksPage';
+
 import * as bookAPI from '../../Services/books-api'
 import BookListPage from '../BookListPage/BookListPage';
 import AddBookPage from '../../Pages/AddBookPage/AddBookPage';
-
+import EditBookPage from '../../Pages/EditBookPage/EditBookPage';
 
 import HomePage from '../HomePage/HomePage'
 import NavBar from '../../Components/NavBar/NavBar'
 
-// import {getAllList} from '../../Services/books-api';
 
 class App extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     books: [],
-  //     user: userService.getUser()
-  //   };
-  // }
-
+  
   state = {
       books: [],
       user: userService.getUser()
@@ -56,21 +48,23 @@ class App extends Component {
       }), () => this.props.history.push('/'));
     }
     
+    handleUpdateBook = async updatedBookData => {
+      const updatedBook = await bookAPI.update(updatedBookData);
+      const newBooksArray = this.state.books.map(b => 
+        b._id === updatedBook._id ? updatedBook : b
+      );
+      this.setState(
+        {books: newBooksArray},
+        () => this.props.history.push('/')
+      );
+    }
     /* Lifecycle Methods */
     async componentDidMount() {
       const books = await bookAPI.getAll();
       console.log(books.books)
       this.setState({books: books.books});
     }
-    // componentDidMount() {
-    //   console.log('App: componentDidMount');
-    // }
-
-    // componentDidUpdate() {
-    //   console.log('App: componentDidUpdate');
-    // }
-
-  
+ 
   
   render () {
   return (
@@ -104,6 +98,12 @@ class App extends Component {
               // history={history}
               />
             } />
+            <Route exact path='/edit' render={({history, location}) => 
+            <EditBookPage
+              handleUpdateBook={this.handleUpdateBook}
+              location={location}
+            />
+          } />
              <Route exact path='/signup' render={({ history }) => 
               <SignupPage
               history={history}
@@ -119,8 +119,8 @@ class App extends Component {
       </Switch>
   </main> 
         <footer className="footer">
-          Copyright &copy; JanLee 2020
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Copyright &copy; JanLee 2020
         </footer>
   </div>
 );

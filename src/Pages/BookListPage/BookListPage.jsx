@@ -1,5 +1,7 @@
 import React from 'react';
 import './BookListPage.css';
+import {Link} from 'react-router-dom';
+
 
 const BookListPage = (props) => {
     return (
@@ -16,7 +18,21 @@ const BookListPage = (props) => {
                         </div>
                         <p>Type: {book.type}</p>
                         <p>Genre: {book.genre}</p>
-                        <button onClick={() => props.handleDeleteBook(book._id)} className="btn btn-default">Remove Book</button>
+                        <Link
+                                className="btn btn-danger"
+                            to={{
+                                pathname: '/edit',
+                                state: {book}
+                            }}
+                            >
+                            EDIT
+                        </Link>
+                            <button 
+                                onClick={() => props.handleDeleteBook(book._id)} 
+                                className="btn btn-danger"
+                                >
+                                Remove Book
+                            </button>
                        </section>
                    ); 
                 })

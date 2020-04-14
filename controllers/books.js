@@ -58,29 +58,29 @@ function show(req, res){
     });
 }
 
-async function update(req, res) {
-    const updatedBook = await Book.findByIdAndUpdate(req.params.id, req.body, {new: true});
-    res.status(200).json(updatedBook);
-}
-
-// function update(req, res){
-//     Book.findByIdAndUpdate(
-//         req.params.id,
-//         req.body,
-//         {new: true}, function(err, book){
-//             res.json({book});
-//         });
+// async function update(req, res) {
+//     const updatedBook = await Book.findOneAndUpdate(req.params.id, req.body, {new: true});
+//     res.status(200).json(updatedBook);
 // }
 
-// async function deleteOne(req, res) {
-//     const deletedBook = await Book.findByIdAndRemove(req.params.id);
-//     res.status(200).json(deletedBook);
-// }
-
-function deleteOne(req, res){
-    Book.findByIdAndDelete(
+function update(req, res){
+    Book.findByIdAndUpdate(
         req.params.id,
-        function(err, book){
-            return index(req, res);
+        req.body,
+        {new: true}, function(err, book){
+            res.json({book});
         });
 }
+
+async function deleteOne(req, res) {
+    const deletedBook = await Book.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedBook);
+}
+
+// function deleteOne(req, res){
+//     Book.findByIdAndDelete(
+//         req.params.id,
+//         function(err, book){
+//             return index(req, res);
+//         });
+// }
