@@ -1,35 +1,34 @@
 .App {
-  min-height: 10vh;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 7vmin auto;
 }
 
 .App-header {
   background-color: var(--black);
+  margin-top: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2vmin;
+  padding: 5vmin;
   font-size: 2.5vmin;
   color: var(--background);
 }
 
 .App main {
+  /* background-color: var(--background); */
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  
-}
+  padding: 5vmin;
 
+}
 .App main h1 {
-  /* color: var(--secondary-dark); */
+  color: var(--secondary-dark);
   margin-bottom: 5vmin;
 }
-
-
 .footer {
-  position:absolute;
   left:0;
   bottom:0;
   right:0;

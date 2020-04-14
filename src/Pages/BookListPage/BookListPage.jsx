@@ -1,21 +1,21 @@
 import React from 'react';
 import './BookListPage.css';
 
-const BooklistPage = (props) => {
-
+const BookListPage = (props) => {
     return (
         <>
-        <header>My Book List</header>
-        <main>
+        <header><h2>My Book List</h2></header>
+            <div className='panel panel-default'>
             { props.books.length !== 0 
                 ? props.books.map((book, idx) => {
                    return (
                        <section key={idx}>
-                        <h4>Title: {book.title}</h4>
+                       <div className="panel-heading">
+                        <h3 className='panel-title'>{book.title}</h3>
                         <p>Author: {book.author}</p>
+                        </div>
                         <p>Type: {book.type}</p>
                         <p>Genre: {book.genre}</p>
-
                         <button onClick={() => props.handleDeleteBook(book._id)} className="btn btn-default">Remove Book</button>
                        </section>
                    ); 
@@ -26,18 +26,9 @@ const BooklistPage = (props) => {
                     <p>Add a Book</p>
                 </div>
             }
-        </main>
+        </div>
         </>
     );
 }
-
-// const BooklistPage = (props) => {
-//     return (
-//         <>
-//             <h1>List of My Books</h1>
-//         </>
-//     );
-// }
-
-
-export default BooklistPage; 
+                
+export default BookListPage; 

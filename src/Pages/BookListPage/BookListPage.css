@@ -1,39 +1,10 @@
-/* .BookListPage-grid {
+.BookListPage-grid {
     width: 80%;
-    display: grid;
+    display: flex;
     grid-template-rows: repeat(auto-fit, minmax(170px, 1fr));
     grid-gap: 20px;
-  } */
-main{
- display: flex; 
- background: lightblue;
- margin-top: 2vmin;
+  }
 
-}
-  .booklistSection {
-    text-align: center;
-    margin-left: 60px;
-    margin-right: 60px;
-    padding: 20px 20px;
-    border: 2px solid white;
-    border-radius: 50px;
-    color: white;
-}
-
-.formHeader {
-    padding-top: 40px;
-    padding-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 40px;
-    color: white;
-}
-
-.noBookYet {
-    text-align: center;
-}
-
-.paraFormat {
-    font-size: 18px;
-    color: white;
-}
+  .panel-title{
+    color: darkblue;
+  }

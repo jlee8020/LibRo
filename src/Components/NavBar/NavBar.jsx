@@ -22,8 +22,6 @@ const NavBar = (props) => {
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='' onClick={props.handleLogout} >LOG OUT</Link>
     </div>;
-
-
   return (
     <div>
       {nav}
