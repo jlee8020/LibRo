@@ -19,7 +19,7 @@ const BookListPage = (props) => {
                         <p>Type: {book.type}</p>
                         <p>Genre: {book.genre}</p>
                         <Link
-                                className="btn btn-danger"
+                                className="btn btn-info"
                             to={{
                                 pathname: '/edit',
                                 state: {book}
