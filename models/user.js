@@ -23,10 +23,7 @@ const userSchema = new mongoose.Schema({
     },
     password: String,
     books: [bookSchema]
-    // user: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: 'User'
-    // },
+   
 }, {
     timestamps: true
 });

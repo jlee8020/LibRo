@@ -7,6 +7,10 @@ const bookSchema = new Schema({
     genre: String,
     author: String,
     // notes: [noteSchema],
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
     
 },{
 timestamps: true
