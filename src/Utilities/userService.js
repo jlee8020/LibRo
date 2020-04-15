@@ -46,6 +46,12 @@ function getBooks(id) {
   .then(res => res.json());
 }
 
+function deleteBook(userId, bookId) {
+  return fetch(BASE_URL + userId + '/books/' + bookId, {
+    method: 'DELETE'
+  })
+  .then(res => res.json());
+}
 
 export default {
   signup, 
@@ -53,4 +59,5 @@ export default {
   logout,
   login,
   getBooks,
+  deleteBook
 };

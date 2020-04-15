@@ -19,19 +19,19 @@ const BookListPage = (props) => {
                         <p>Type: {book.type}</p>
                         <p>Genre: {book.genre}</p>
                         <Link
-                                className="btn btn-info"
+                                className="btn sm btn-info"
                             to={{
                                 pathname: '/edit',
                                 state: {book}
                             }}
                             >
                             EDIT
-                        </Link>
+                        </Link>&nbsp;
                             <button 
                                 onClick={() => props.handleDeleteBook(book._id)} 
-                                className="btn btn-danger"
+                                className="btn sm btn-danger"
                                 >
-                                Remove Book
+                                x
                             </button>
                        </section>
                    ); 

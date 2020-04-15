@@ -41,13 +41,22 @@ class App extends Component {
       this.props.history.push('/'));
     }
 
-    handleDeleteBook= async id => {
-      await bookAPI.deleteOne(id);
-      this.setState(state => ({
-        books: state.books.filter(b => b._id !== id)
-      }), () => this.props.history.push('/'));
-    }
+    // handleDeleteBook= async id => {
+    //   await bookAPI.deleteOne(id);
+    //   this.setState(state => ({
+    //     books: state.books.filter(b => b._id !== id)
+    //   }), () => this.props.history.push('/'));
+    // }
     
+    handleDeleteBook = (bookId) => {
+      userService.deleteBook(this.state.user._id, bookId)
+      .then(data => {
+        this.setState({ books: data }, () => {
+          return this.props.history.push('/my-booklist-page')
+        })
+      })
+    }
+
     handleUpdateBook = async updatedBookData => {
       const updatedBook = await bookAPI.update(updatedBookData);
       const newBooksArray = this.state.books.map(b => 
