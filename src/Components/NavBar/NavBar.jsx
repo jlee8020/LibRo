@@ -6,7 +6,8 @@ const NavBar = (props) => {
     <div>
       <Link to='/' className='NavBar-link'>Home</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link to="/allbooks" className='NavBar-link'>All Books</Link>
+      {props.user && 
+      <Link to="/allbooks" className='NavBar-link'>All Books</Link>}
       &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;
       <Link to="/add" className='NavBar-link' >Add A Book</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

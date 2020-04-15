@@ -1,5 +1,5 @@
 const Book = require('../models/book');
-const User = require('../models/user');
+// const User = require('../models/user');
 
 
 module.exports = {
@@ -15,7 +15,13 @@ module.exports = {
 //     const books = await Book.find({});
 //     res.status(200).json(books);
 // }
+
+//working code ***
+// console.log(req.user.id)
+
 function index(req, res){
+    
+    // Book.find({user:req.user}, function(err, books){
     Book.find({}, function(err, books){
         res.json({books});
     });
@@ -72,15 +78,15 @@ function update(req, res){
         });
 }
 
-async function deleteOne(req, res) {
-    const deletedBook = await Book.findByIdAndRemove(req.params.id);
-    res.status(200).json(deletedBook);
-}
-
-// function deleteOne(req, res){
-//     Book.findByIdAndDelete(
-//         req.params.id,
-//         function(err, book){
-//             return index(req, res);
-//         });
+// async function deleteOne(req, res) {
+//     const deletedBook = await Book.findByIdAndRemove(req.params.id);
+//     res.status(200).json(deletedBook);
 // }
+
+function deleteOne(req, res){
+    Book.findByIdAndDelete(
+        req.params.id,
+        function(err, book){
+            return index(req, res);
+        });
+}

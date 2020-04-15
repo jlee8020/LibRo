@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignUpPage'
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../Utilities/userService';
-
+import bookService from '../../Utilities/booksService';
 import * as bookAPI from '../../Services/books-api'
 import BookListPage from '../BookListPage/BookListPage';
 import AddBookPage from '../../Pages/AddBookPage/AddBookPage';
@@ -41,21 +41,14 @@ class App extends Component {
       this.props.history.push('/'));
     }
 
-    // handleDeleteBook= async id => {
-    //   await bookAPI.deleteOne(id);
-    //   this.setState(state => ({
-    //     books: state.books.filter(b => b._id !== id)
-    //   }), () => this.props.history.push('/'));
-    // }
-    
-    handleDeleteBook = (bookId) => {
-      userService.deleteBook(this.state.user._id, bookId)
-      .then(data => {
-        this.setState({ books: data }, () => {
-          return this.props.history.push('/my-booklist-page')
-        })
-      })
+    handleDeleteBook= async id => {
+      await bookAPI.deleteOne(id);
+      this.setState(state => ({
+        books: state.books.filter(b => b._id !== id)
+      }), () => this.props.history.push('/'));
     }
+    
+  
 
     handleUpdateBook = async updatedBookData => {
       const updatedBook = await bookAPI.update(updatedBookData);
@@ -68,11 +61,21 @@ class App extends Component {
       );
     }
     /* Lifecycle Methods */
+
     async componentDidMount() {
-      const books = await bookAPI.getAll();
-      console.log(books.books)
+      const books = await bookService.index();
       this.setState({books: books.books});
+            // this.setState({books});
+
     }
+  
+    // async componentDidMount() {
+    //   const books = await bookAPI.getAll();
+    //   console.log(books.books)
+    //   // this.setState({books: books.books});
+    //   // this.setState({books: books.books});
+    //   // this.setState({books});
+    // }
  
   
   render () {
@@ -92,13 +95,15 @@ class App extends Component {
               }
             />
             <Route exact path='/allbooks' render={({history}) =>
+            userService.getUser() ? 
             <BookListPage
               books={this.state.books}
               handleAddBook={this.handleAddBook}
               user={this.state.user}
               handleDeleteBook={this.handleDeleteBook}
               history={history}
-              /> 
+              /> :
+              <Redirect to='/login' />
             } />
             <Route exact path='/add' render={() =>
             <AddBookPage

@@ -6,13 +6,14 @@ import {Link} from 'react-router-dom';
 const BookListPage = (props) => {
     return (
         <>
-        <header><h2>My Book List</h2></header>
+        <header><h2>All Books List</h2></header>
             <div className='panel panel-default'>
             { props.books.length !== 0 
                 ? props.books.map((book, idx) => {
                    return (
                        <section key={idx}>
                        <div className="panel-heading">
+                       <div>userID {book.user}</div>
                         <h3 className='panel-title'>{book.title}</h3>
                         <p>Author: {book.author}</p>
                         </div>

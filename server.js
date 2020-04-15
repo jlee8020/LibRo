@@ -1,6 +1,7 @@
 const express = require('express');
 const logger = require('morgan');
-// const favicon = require('serve-favicon');
+const favicon = require('serve-favicon');
+
 const path = require('path');
 
 const app = express();
@@ -19,12 +20,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cors());
 
-// app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
+
+app.use(require('./config/auth'));
 
 app.use('/api/books', booksRouter);
 app.use('/api/users', usersRouter);
-// app.use(require('./config/auth'));
+
+//protected route
+// app.use('/api/books', require('./routes/api/books'));
 
 
 // The following "catch all" route (note the *)is necessary
