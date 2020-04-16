@@ -8,7 +8,7 @@ class AddBookPage extends Component {
             type:'',
             genre:'',
             author:'',
-            user: this.props.user,
+            // user: this.props.user,
         },
         
     };

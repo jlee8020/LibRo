@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-function BookCard({book, handleDeleteBook}){
+function BookCard({book, handleDeleteBook, user}){
     return(
-        <div className='panel panel-default'>
+        <div className='panel sm panel-default'>
             <div className="panel-heading">
                 <h3 className='panel-title'>{book.title}</h3>
             </div>
@@ -18,6 +18,7 @@ function BookCard({book, handleDeleteBook}){
                 </dl>
             </div>
             <div className='panel-footer'>
+             {book.user === user._id ?
                 <Link
                     className='btn btn-xs btn-warning'
                     to={{
@@ -27,12 +28,19 @@ function BookCard({book, handleDeleteBook}){
                     >
                     EDIT
                     </Link>
-            <button
+                    :
+                    <></>
+             }
+             {book.user === user._id ?
+                <button
                 className='btn btn-xs btn-danger margin-left-10'
                 onClick={() => handleDeleteBook(book._id)}
                 >
                 DELETE
             </button>
+            :
+            <></>
+             }
         </div>
     </div>
     )

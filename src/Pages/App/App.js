@@ -4,7 +4,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignUpPage'
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../Utilities/userService';
-import bookService from '../../Utilities/booksService';
+
 import * as bookAPI from '../../Services/books-api'
 import BookListPage from '../BookListPage/BookListPage';
 import AddBookPage from '../../Pages/AddBookPage/AddBookPage';
@@ -34,7 +34,6 @@ class App extends Component {
   
     handleAddBook = async newBookData => {
       const newBook = await bookAPI.create(newBookData);
-      console.log(this.state)
       this.setState(state => ({
         books: [...state.books, newBook]
       }), () => 
@@ -62,20 +61,18 @@ class App extends Component {
     }
     /* Lifecycle Methods */
 
-    async componentDidMount() {
-      const books = await bookService.index();
-      this.setState({books: books.books});
-            // this.setState({books});
-
-    }
-  
     // async componentDidMount() {
-    //   const books = await bookAPI.getAll();
-    //   console.log(books.books)
-    //   // this.setState({books: books.books});
-    //   // this.setState({books: books.books});
-    //   // this.setState({books});
+    //   const books = await bookService.index();
+    //   this.setState({books: books.books});
+    //         // this.setState({books});
+
     // }
+  
+    async componentDidMount() {
+      const books = await bookAPI.getAll();
+      // this.setState({books: books.books});
+      this.setState({books});
+    }
  
   
   render () {
@@ -89,22 +86,38 @@ class App extends Component {
         />    
       </header>
       <main>
-        <Switch>
-          <Route exact path="/" render={(props) => 
-              <HomePage {...props} />
-              }
+        <Switch> 
+           <Route exact path="/homepage" render={({props}) => 
+              <HomePage {...props}
+      
             />
+        } /> 
+         <Route exact path='/signup' render={({ history }) => 
+              <SignupPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+              />
+            }/>
+            <Route exact path='/login' render={({ history }) => 
+            <LoginPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+      {this.state.user ? 
             <Route exact path='/allbooks' render={({history}) =>
-            userService.getUser() ? 
+            // userService.getUser() ? 
             <BookListPage
               books={this.state.books}
               handleAddBook={this.handleAddBook}
               user={this.state.user}
               handleDeleteBook={this.handleDeleteBook}
-              history={history}
-              /> :
+              // history={history}
+              /> 
+            }/>
+            :
               <Redirect to='/login' />
-            } />
+           }
             <Route exact path='/add' render={() =>
             <AddBookPage
               handleAddBook = {this.handleAddBook}
@@ -118,26 +131,16 @@ class App extends Component {
               location={location}
             />
           } />
-             <Route exact path='/signup' render={({ history }) => 
-              <SignupPage
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
-              />
-            }/>
-            <Route exact path='/login' render={({ history }) => 
-            <LoginPage
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
-            />
-          }/>
+            
       </Switch>
-  </main> 
+   </main> 
         <footer className="footer">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           Copyright &copy; JanLee 2020
         </footer>
-  </div>
-);
-}}
+    </div>
+    )
+  }
+}
 
 export default App;

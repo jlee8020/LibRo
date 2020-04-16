@@ -9,7 +9,6 @@ router.post('/login', usersCtrl.login);
 
 
 /*---------- Protected Routes ----------*/
-// router.delete('/books/:bookid/:userid', usersCtrl.deleteBook);
 
 
 

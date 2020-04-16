@@ -5,15 +5,9 @@ const SECRET = process.env.SECRET;
 module.exports = {
   signup,
   login,
-  // deleteBook
 };
 
-// async function deleteBook(req, res) {
-//   const user = await User.findById(req.params.userid);
-//   user.books.remove(req.params.bookid);
-//   await user.save();
-//   res.status(200).json(user.books);
-// }
+
 
 async function signup(req, res) {
   const user = new User(req.body);
