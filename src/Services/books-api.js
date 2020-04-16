@@ -40,6 +40,7 @@ export function deleteOne(id) {
   }
 
   export function update(book) {
+    // console.log(book)
     return fetch(`${BASE_URL}/${book._id}`, {
       method: 'PUT',
       headers: {

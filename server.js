@@ -28,9 +28,6 @@ app.use(require('./config/auth'));
 app.use('/api/books', booksRouter);
 app.use('/api/users', usersRouter);
 
-//protected route
-// app.use('/api/books', require('./routes/api/books'));
-
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work 

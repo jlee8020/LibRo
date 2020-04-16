@@ -65,7 +65,6 @@ class App extends Component {
     //   const books = await bookService.index();
     //   this.setState({books: books.books});
     //         // this.setState({books});
-
     // }
   
     async componentDidMount() {
