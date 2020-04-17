@@ -5,14 +5,24 @@
 }
 
 .App-header {
+  flex-wrap: nowrap;
   background-color: var(--black);
   margin-top: 0px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 5vmin;
   font-size: 2.5vmin;
   color: var(--background);
+}
+
+h1{
+  display: flex;
+
+}
+
+.h1-main{
+color: rgb(238, 228, 211);
 }
 
 .App main {
@@ -37,3 +47,42 @@
   font-weight: bold;
   color: white;
 }
+
+.panel-title2{
+  color: rgb(74, 157, 199);
+  background-color: black;
+}
+
+/* background-color: rgb(238, 228, 211); */
+.panel{
+  color: darkblue;
+  background-color:whitesmoke;
+  padding: 2%;
+  margin: auto;
+  border-radius: 5px;
+
+}
+
+.login{
+  color: darkblue;
+  background-color:whitesmoke;
+  padding: 2%;
+  margin: auto;
+  border-radius: 5px;
+  border: lightslategray;
+}
+
+.btn{
+  color: rgb(238, 228, 211);
+}
+
+.book-content{
+  background-color:  rgb(238, 228, 211);
+  color: rgb(74, 157, 199)
+}
+
+.home-main{
+  color: rgb(74, 157, 199)
+
+}
+

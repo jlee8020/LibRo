@@ -3,24 +3,24 @@ import {Link} from 'react-router-dom';
 
 function BookCard({book, handleDeleteBook, user}){
     return(
-        <div className='panel sm panel-default'>
+        <div className='panel'>
             <div className="panel-heading">
-                <h3 className='panel-title'>{book.title}</h3>
+                <h4 className='panel-title2'>{book.title}</h4>
             </div>
             <div className='panel-body'>
-                <dl>
-                    <dt>Type</dt>
-                    <dd>{book.type}</dd>
-                    <dt>Genre</dt>
-                    <dd>{book.genre}</dd>
-                    <dt>Author</dt>
-                    <dd>{book.author}</dd>
+                <dl className="book-content">
+                    <dd>Type</dd>
+                    <dt>{book.type}</dt>
+                    <dd>Genre</dd>
+                    <dt>{book.genre}</dt>
+                    <dd>Author</dd>
+                    <dt>{book.author}</dt>
                 </dl>
             </div>
             <div className='panel-footer'>
              {book.user === user._id ?
                 <Link
-                    className='btn btn-xs btn-warning'
+                    className='btn xs btn-info'
                     to={{
                         pathname: '/edit',
                         state: {book}
@@ -33,7 +33,7 @@ function BookCard({book, handleDeleteBook, user}){
              }
              {book.user === user._id ?
                 <button
-                className='btn btn-xs btn-danger margin-left-10'
+                className='btn xs btn-danger margin-left-10'
                 onClick={() => handleDeleteBook(book._id)}
                 >
                 DELETE

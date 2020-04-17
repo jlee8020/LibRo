@@ -39,11 +39,11 @@ class SignupForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="SignUpPage">
         <header className="header-footer">Sign Up</header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
-            <div className="">
+            <div className="col-sm-12">
               <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
             </div>
           </div>
@@ -64,8 +64,11 @@ class SignupForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-              <Link to='/'>Cancel</Link>
+              <button className="btn btn-dark" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
+              <Link 
+               className='btn xs btn-light'
+              to='/'>Cancel
+              </Link>
             </div>
           </div>
         </form>

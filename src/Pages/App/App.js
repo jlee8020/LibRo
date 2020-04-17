@@ -78,7 +78,8 @@ class App extends Component {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>LibRo</h1>
+       <i className="fas fa-book fa-3x"></i>&nbsp;
+        <h1 className="h1-main">LibRo</h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <NavBar 
           user={this.state.user}
               handleLogout={this.handleLogout}
@@ -86,9 +87,8 @@ class App extends Component {
       </header>
       <main>
         <Switch> 
-           <Route exact path="/homepage" render={({props}) => 
+           <Route exact path="/" render={({props}) => 
               <HomePage {...props}
-      
             />
         } /> 
          <Route exact path='/signup' render={({ history }) => 

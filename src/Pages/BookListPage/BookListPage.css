@@ -1,9 +1,10 @@
 .BookListPage-grid {
     width: 80%;
     display: flex;
+    flex-wrap: wrap;
     grid-template-rows: repeat(auto-fit, minmax(170px, 1fr));
     grid-gap: 20px;
-    /* border: solid gray; */
+    justify-content: space-evenly;
   }
 
   .panel-title{

@@ -33,7 +33,7 @@ class AddBookPage extends Component {
 render(){
     return (
         <>
-        <h1>Add a Book</h1>
+        <h2>Add a Book</h2>
         <form ref={this.formRef}
         autoComplete="off"
         onSubmit={this.handleSubmit}
@@ -80,7 +80,7 @@ render(){
             </div>
         <button
             type="submit"
-            className="btn"
+            className="btn xs btn-dark"
             disabled={this.state.invalidForm}
         >
         Add Book

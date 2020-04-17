@@ -1,11 +1,10 @@
-.panel{
-    width: 80%;
-    display: flex;
-    grid-template-rows: repeat(auto-fit, minmax(170px, 1fr));
-    grid-gap: 20px;
-    /* border: solid gray; */
+.panel{    
+    border: solid gray;
   }
+
 
   .panel-title{
     color: darkblue;
+    background-color: green;
+
   }
