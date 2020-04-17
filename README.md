@@ -40,10 +40,10 @@
 ![Wireframe](https://i.imgur.com/F93B8iT.png)
 
 ## Trello
-![Trello](https://trello.com/b/JBmPqtiZ/mern-stack-project-4)
+[Trello](https://trello.com/b/JBmPqtiZ/mern-stack-project-4)
 
 ## Deployed Link
-![Heroku](https://libro100.herokuapp.com/login)
+[Heroku](https://libro100.herokuapp.com/login)
 
 ## Finished Product
 ![image1]()
