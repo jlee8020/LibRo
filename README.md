@@ -7,6 +7,7 @@
 - [ERD](#erd)
 - [Wireframe](#wireframe)
 - [Trello](#trello)
+- [Deployed Link](#deployed-link)
 - [Finished Product](#finished-product)
 - [Credits](#credits)
 - [Technogies Used](#technogies-used)
@@ -33,13 +34,16 @@
 - Brianna's story is that of a "rags to riches". From a humble beginning of growing up in a third world country with almost nothing in her posession Brianna worked hard, becoming a CEO of a Fortune 100 Company. She credits her success to her self-help book collection where she learned many things from dealing with people to running a successful business. Brianna unplugs from her hectic schedule once a week and turn to her books for relaxation but she is unable to quickly browse her collection for a great book to read. Thanks to Libro Brianna can now quickly find a book she wants to read from her collection.
 
 ## ERD
-[!ERD](https://github.com/jlee8020/LibRo/blob/master/src/Assets/images/ERD.png)
+[!ERD](https://i.imgur.com/O0vjBKv.png)
 
 ## Wireframe
-[!Wireframe]()
+[!Wireframe](https://i.imgur.com/F93B8iT.png)
 
 ## Trello
 [!Trello](https://trello.com/b/JBmPqtiZ/mern-stack-project-4)
+
+## Deployed Link
+[!Heroku](https://libro100.herokuapp.com/login)
 
 ## Finished Product
 [!image1]()
