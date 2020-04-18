@@ -16,7 +16,7 @@ function BookCard({book, handleDeleteBook, user}){
                     <dd>Author</dd>
                     <dt>{book.author}</dt>
                 </dl>
-            </div>
+            </div><br />
             <div className='panel-footer'>
              {book.user === user._id ?
                 <Link
@@ -41,7 +41,7 @@ function BookCard({book, handleDeleteBook, user}){
             :
             <></>
              }
-        </div>
+        </div><br/>
     </div>
     )
 }

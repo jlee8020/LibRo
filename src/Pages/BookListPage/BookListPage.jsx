@@ -6,7 +6,7 @@ import BookCard from '../../Components/BookCard/BookCard';
 function BookListPage(props) {
     return (
       <>
-        <h3>Book List</h3>
+        <h3 className="bl">Book List</h3>
         <div className='BookListPage-grid'>
           {props.books.map(book =>
               <BookCard

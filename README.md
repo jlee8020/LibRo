@@ -12,6 +12,7 @@
 - [Credits](#credits)
 - [Technogies Used](#technogies-used)
 - [Future Enhancements](#future-enhancements)
+- [What's Next?](#whats-next)
 - [Sending Love and Appreciation to the Following:](#sending-love-and-appreciation-to-the-following)
 
 ## Motivation
@@ -46,10 +47,10 @@
 [Heroku](https://libro100.herokuapp.com/login)
 
 ## Finished Product
-![image1]()
-![image2]()
-![image2]()
-![image2]()
+![login](https://i.imgur.com/5mrQYW0.png)
+![signup](https://i.imgur.com/WsCDAZ8.png)
+![addbook](https://i.imgur.com/46aiDKB.png)
+![booklist](https://i.imgur.com/jucoaKE.png)
 
 ## Credits
 - Trello
@@ -68,6 +69,9 @@
 - Ability to search my collection
 - Ability Add Notes about reading activities
 - Ability to Upload images
+
+## What's Next?
+- Mastery of MERN
 
 ## Sending Love and Appreciation to the Following:
 - Ben Manley

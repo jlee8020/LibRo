@@ -34,6 +34,7 @@ render(){
     return (
         <>
         <h2>Add a Book</h2>
+        <div className="addbookform">
         <form ref={this.formRef}
         autoComplete="off"
         onSubmit={this.handleSubmit}
@@ -86,6 +87,7 @@ render(){
         Add Book
         </button>
         </form>
+        </div>
         </>
     );
     }

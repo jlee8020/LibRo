@@ -136,8 +136,8 @@ class App extends Component {
         <footer className="footer">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           Copyright &copy; JanLee 2020
-        </footer>
-    </div>
+        </footer> &nbsp;&nbsp;&nbsp;&nbsp;
+    </div> 
     )
   }
 }
