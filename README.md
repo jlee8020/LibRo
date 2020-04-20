@@ -9,6 +9,7 @@
 - [Wireframe](#wireframe)
 - [Trello](#trello)
 - [Deployed Link](#deployed-link)
+- [Icebox](#Icebox)
 - [Finished Product](#finished-product)
 - [Credits](#credits)
 - [Technogies Used](#technogies-used)
@@ -52,6 +53,14 @@
 
 ## Deployed Link
 [Heroku](https://libro100.herokuapp.com/login)
+
+## Icebox
+As a user I should be able to
+- AAU, I should be able to...Read or View All of my Collection
+- AAU, I should be able to... Create A List of my Book Collection
+- AAU, I should be able to... Update my Collection
+- AAU, I should be able to... Delete my Collection
+- AAU, I should be able to... only Delete what I added
 
 ## Finished Product
 ![login](https://i.imgur.com/5mrQYW0.png)
