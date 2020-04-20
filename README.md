@@ -19,6 +19,8 @@
 ## Motivation
 
 - “The more that you read, the more things you will know. The more that you learn, the more places you’ll go.” – Dr. Seuss
+
+![Smartest](https://i.imgur.com/5FUBZiF.jpg)
   
 - To Build a Functional Book App (for my Personal Use) that will hold all the books in my collection.
 
