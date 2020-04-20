@@ -4,6 +4,7 @@
 - [Motivation](#motivation)
 - [Developer Ahas](#developer-ahas)
 - [User Stories](#user-stories)
+- [My Collection](#my-collection)
 - [ERD](#erd)
 - [Wireframe](#wireframe)
 - [Trello](#trello)
@@ -21,6 +22,8 @@
   
 - To Build a Functional Book App (for my Personal Use) that will hold all the books in my collection.
 
+## My Collection
+![My Collection](https://i.imgur.com/Pom25AW.jpg)
 
 ## Developer Ahas
 
@@ -33,6 +36,8 @@
 - Danielle is an 11 year old girl who just received the first two of the Harry Potter book series. She fell in love with the story and asked her mom to buy her the rest of the collection. Danielle's mom Jan wants to teach her organizational skills now that she will have her first book collection. Thanks to LibRo teaching Danielle organizational skills is as easy as making pancakes!
   
 - Brianna's story is that of a "rags to riches". From a humble beginning of growing up in a third world country with almost nothing in her posession Brianna worked hard, becoming a CEO of a Fortune 100 Company. She credits her success to her self-help book collection where she learned many things from dealing with people to running a successful business. Brianna unplugs from her hectic schedule once a week and turn to her books for relaxation but she is unable to quickly browse her collection for a great book to read. Thanks to Libro Brianna can now quickly find a book she wants to read from her collection.
+
+
 
 ## ERD
 ![ERD](https://i.imgur.com/O0vjBKv.png)
